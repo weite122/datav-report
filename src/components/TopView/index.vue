@@ -27,7 +27,7 @@
 
 <script>
   import TotalOrders from '../TotalOrders'
-  import TodayUsers from '../TotalOrders'
+  import TodayUsers from '../TodayUsers'
   import TotalSales from '../TotalSales'
   import TotalUsers from '../TotalUsers'
   export default {
