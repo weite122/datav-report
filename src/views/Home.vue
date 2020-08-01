@@ -8,10 +8,10 @@
 </template>
 
 <script>
-  import TopView from '../components/TopView/topView'
-  import SalesView from '../components/SalesView/salesView'
-  import BottomView from '../components/BottomView/bottomView'
-  import MapView from '../components/MapView/mapView'
+  import TopView from '../components/TopView/index'
+  import SalesView from '../components/SalesView/index'
+  import BottomView from '../components/BottomView/index'
+  import MapView from '../components/MapView/index'
 
   export default {
     name: 'Home',
