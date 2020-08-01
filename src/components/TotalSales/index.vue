@@ -18,8 +18,8 @@
       </div>
     </template>
     <template v-slot:footer>
-      <span class="emphasis">昨日销售额 </span>
-      <span class="money">￥ 30,000,000</span>
+      <span>昨日销售额 </span>
+      <span class="emphasis">￥ 30,000,000</span>
     </template>
   </common-card>
 

@@ -4,11 +4,11 @@
     value="322,354,24"
   >
     <template>
-      <div id="total-orders-chart" :style="{width: '100%', height: '100%'}"></div>
+      <div id="total-orders-chart" :style="{width: '100%', height: '100%'}" />
     </template>
     <template v-slot:footer>
-      <span class="emphasis">昨日订单量 </span>
-      <span class="money">40,000,000</span>
+      <span>昨日订单量 </span>
+      <span class="emphasis">40,000,000</span>
     </template>
   </common-card>
 </template>
