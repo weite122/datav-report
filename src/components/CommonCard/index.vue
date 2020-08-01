@@ -34,7 +34,7 @@
   }
   .chart {
     height: 50px;
-    background: #666666;
+    /*background: #666666;*/
   }
   .line {
     margin: 10px 0;
@@ -43,5 +43,27 @@
   .total {
     font-size: 12px;
     color: #666;
+  }
+</style>
+
+<style lang="scss">
+  .emphasis {
+    margin-left: 5px;
+    color: #333;
+    font-weight: 700;
+  }
+  .increase{
+    width: 0;
+    height: 0;
+    border: 3px solid transparent;
+    border-bottom-color: #a02222;
+    margin: 0 0 3px 5px;
+  }
+  .decrease{
+    width: 0;
+    height: 0;
+    border: 3px solid transparent;
+    border-top-color: #145a1a;
+    margin: 3px 0 0 5px;
   }
 </style>
