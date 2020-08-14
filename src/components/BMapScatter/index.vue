@@ -407,7 +407,6 @@
     return res
   }
   export default {
-    name: "BMap2",
     data() {
       return {
         title: {
