@@ -27,9 +27,10 @@
 
 <script>
   import commonCardMixin from '../../mixins/commonCardMixin'
+  import commonDataMixin from "../../mixins/commonDataMixin";
 
   export default {
-    mixins: [commonCardMixin]
+    mixins: [commonCardMixin, commonDataMixin],
   }
 </script>
 

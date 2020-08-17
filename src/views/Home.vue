@@ -22,10 +22,35 @@
       BottomView,
       MapView
     },
+    methods: {
+      getReportData(){
+        return this.reportData
+      },
+      getWordCloud(){
+        return this.wordCloud
+      },
+      getMapData(){
+        return this.mapData
+      }
+    },
+    data() {
+      return {
+        reportData: null,
+        wordCloud: null,
+        mapData: null
+      }
+    },
+    provide(){
+      return {
+        getReportData: this.getReportData,
+        getWordCloud: this.getWordCloud,
+        getMapData: this.getMapData
+      }
+    },
     mounted() {
-      wordcloud().then(data => console.log(data))
-      screenData().then(data => console.log(data))
-      mapScatter().then(data => console.log(data))
+      wordcloud().then(data => this.wordCloud = data)
+      screenData().then(data => this.reportData = data)
+      mapScatter().then(data => this.mapData = data)
     }
   }
 </script>
