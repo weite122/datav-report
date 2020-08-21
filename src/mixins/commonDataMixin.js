@@ -24,6 +24,11 @@ function wrapperOriginalNumber(obj, key) {
 }
 
 export default {
+  methods: {
+    format(v) {
+      return format(v)
+    }
+  },
   computed: {
     reportData() {
       return this.getReportData()
