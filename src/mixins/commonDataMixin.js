@@ -19,6 +19,18 @@ function wrapperArray(obj, key) {
   return obj && obj[key] ? obj[key] : []
 }
 
+function wrapperObject(obj, key) {
+  if (obj && key.indexOf('.')>=0) {
+    const keys = key.split('.')
+    keys.forEach(key => {
+      obj = obj[key]
+    })
+    return obj
+  } else{
+    return obj && obj[key] ? obj[key] : {}
+  }
+}
+
 function wrapperOriginalNumber(obj, key) {
   return obj && obj[key] ? obj[key] : 0
 }
