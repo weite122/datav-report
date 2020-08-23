@@ -3,34 +3,32 @@
 </template>
 
 <script>
-  function getColor(value) {
-    return value > 0 && value <= 0.5 ? 'rgba(97,216,0,.7)'
-      : value > 0.5 && value <= 0.8 ? 'rgba(204,178,26,.7)'
-        : value > 0.8 ? 'rgba(241,47,28,.7)' : '#c7c7cb'
-  }
+import commonDataMixin from "@/mixins/commonDataMixin";
 
-  export default {
-    name: "index",
-    data() {
-      return {
-        chartData: {
-          columns: ['title', 'percent'],
-          rows: [{
-            title: 'rate',
-            percent: 0.5899
-          }]
-        },
-        chartSettings: {}
+function getColor(value) {
+  return value > 0 && value <= 50 ? 'rgba(97,216,0,.7)'
+      : value > 50 && value <= 80 ? 'rgba(204,178,26,.7)'
+          : value > 80 ? 'rgba(241,47,28,.7)' : '#c7c7cb'
+}
+
+export default {
+  mixins: [commonDataMixin],
+  watch: {
+    userGrowthLastMonth() {
+      this.chartData = {
+        columns: ['title', 'percent'],
+        rows: [{
+          title: '用户月同比增长',
+          percent: this.userGrowthLastMonth / 1000
+        }]
       }
-    },
-    mounted() {
       this.chartSettings = {
         seriesMap: {
-          rate: {
+          用户月同比增长: {
             radius: '80%',
             label: {
               formatter: (v) => {
-                return `${Math.floor(v.data.value * 100)}`
+                return `${(v.data.value * 100).toFixed(2)}%`
               },
               textStyle: {
                 fontSize: 36,
@@ -63,7 +61,14 @@
         }
       }
     }
+  },
+  data() {
+    return {
+      chartData: {},
+      chartSettings: {}
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>
